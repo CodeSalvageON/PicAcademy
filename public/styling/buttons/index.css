@@ -1,0 +1,21 @@
+/* Button Styling. Mostly classes. */
+
+.button {
+  height: 30%;
+  color: white;
+  font-size: 5.5vw;
+}
+
+.button-shadow {
+  box-shadow: 10px 10px 5px #474747;
+}
+
+/* IDs */
+
+#pic-button {
+  font-size: 5.5vw;
+  width: 70%;
+  padding: 8px;
+  background-color: #ff6250;
+  border-radius: 3px;
+}
