@@ -13,6 +13,9 @@
 
     <!-- Button Stylings -->
     <link href="/styling/buttons/index.css" rel="stylesheet" type="text/css" />
+
+    <!-- Hider -->
+    <link href="/styling/hider.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <section id="main-page"></section>
@@ -24,6 +27,11 @@
       <p class="button-shadow zoom" id="pic-button">
         Upload Image/Take Picture
       </p>
+      <form id="hidden-image-form">
+          <input type="file" id="imageFile" name="image-file" />
+          <button id="hidden-image-button">
+          </button>
+        </form>
     </section>
 
     <!-- Scripts go here. -->
@@ -33,6 +41,9 @@
     <!-- Style Scripts -->
     <script src="/styling/scripts/background.js"></script>
     <script src="/styling/scripts/element-list.js"></script>
+
+    <!-- Actions -->
+    <script src="/scripts/buttons/buttons.js"></script>
 
     <script src="/scripts/general-lib/init.js"></script><!-- Initialize the General Library-->
   </body>

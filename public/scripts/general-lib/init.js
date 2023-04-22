@@ -6,4 +6,6 @@ if (mobileCheck() == true) {
   
   picButton.style.fontSize = "10vw";
   picButton.style.borderRadius = "20px";
+
+  picButton.classList.remove("zoom");
 }
