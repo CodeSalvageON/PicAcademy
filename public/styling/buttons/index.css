@@ -10,12 +10,24 @@
   box-shadow: 10px 10px 5px #474747;
 }
 
+.zoom {
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform .5s; 
+}
+
+.zoom:hover {
+  cursor: default;
+  transform: scale(1.05);
+}
+
 /* IDs */
 
 #pic-button {
   font-size: 5.5vw;
   width: 70%;
   padding: 8px;
+  cursor: pointer;
   background-color: #ff6250;
   border-radius: 3px;
 }
