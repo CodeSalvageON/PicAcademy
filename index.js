@@ -20,7 +20,7 @@ const reqProm = require(__dirname + '/request-promise.js');
 // Routes
 
 app.get('', function (req, res) {
-  const index = __dirname + '/public/static/index.html';
+  const index = __dirname + '/public/static/v1.html';
 
   res.sendFile(index);
 });
