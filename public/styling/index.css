@@ -24,6 +24,10 @@ p {
   margin: 0;
 }
 
+a:before, a:after, a {
+  color: #e87954;
+}
+
 /* Natural Tags end here. */
 /* Begin position classes */
 

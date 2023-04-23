@@ -2,6 +2,7 @@
 
 // Titles
 const pageTitle = document.getElementById("page-title"); // page title 
+const versionNumber = document.getElementById("version-number");
 
 // Buttons
 const picButton = document.getElementById("pic-button"); // Pic button

@@ -8,6 +8,8 @@ if (mobileCheck() == true) {
   picButton.style.borderRadius = "20px";
 
   picButton.classList.remove("zoom");
+
+  versionNumber.style.fontSize = "5vw";
 }
 
 if (isTablet) {
