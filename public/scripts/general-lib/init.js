@@ -9,3 +9,7 @@ if (mobileCheck() == true) {
 
   picButton.classList.remove("zoom");
 }
+
+if (isTablet) {
+  picButton.classList.remove("zoom");
+}
