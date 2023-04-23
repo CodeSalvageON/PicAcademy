@@ -5,3 +5,7 @@
 #hidden-image-form {
   display: none;
 }
+
+#image-canvas {
+  display: none;
+}
