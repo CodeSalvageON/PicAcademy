@@ -1,6 +1,4 @@
 // Important server stuff
-
-const fs = require('fs');
 const express = require('express');
 
 const app = require('express')();
@@ -15,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Other modules
 
-const reqProm = require(__dirname + '/request-promise.js');
+const rp = require('request-promise');
 
 // Routes
 
