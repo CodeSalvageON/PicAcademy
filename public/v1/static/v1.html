@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      PicAcademy -- Pictures into Answers
+    </title>
+
+    <link href="/v1/styling/index.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Font Stylings -->
+    <link href="/v1/styling/fonts/sizes.css" rel="stylesheet" type="text/css" />
+    <link href="/v1/styling/fonts/effects.css" rel="stylesheet" type="text/css" />
+
+    <!-- Button Stylings -->
+    <link href="/v1/styling/buttons/index.css" rel="stylesheet" type="text/css" />
+
+    <!-- Hider -->
+    <link href="/v1/styling/hider.css" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link href="/v1/styling/images/icon/icon.jpg" rel="shortcut icon"/>
+  </head>
+  <body>
+    <section id="main-page"></section>
+    <section id="page-content">
+      <p class="large undershadow" id="page-title">
+        PicAcademy
+      </p>
+      <p class="undershadow mid" id="version-number">
+        Version 1.0 <a href="">Version History</a>
+      </p>
+      <br/>
+      <p class="button-shadow zoom" id="pic-button">
+        Upload Image/Take Picture
+      </p>
+      <form id="hidden-image-form">
+        <input type="file" id="imageFile" name="image-file" accept="image/*" />
+        <button id="hidden-image-button">
+        </button>
+      </form>
+
+      <p id="placeholder">
+        Please Wait...
+      </p>
+      <p class="button-shadow zoom" id="answer-button">
+        Find Answer
+      </p>
+    </section>
+
+    <canvas id="image-canvas"></canvas>
+    <img id="image-placer" />
+
+    <!-- Scripts go here. -->
+    <!-- General Library -->
+    <script src="/v1/scripts/general-lib/main.js"></script>
+
+    <!-- Other Libraries -->
+    <script src="/v1/scripts/lib/tesseract/tesseract.min.js"></script>
+
+    <!-- Style Scripts -->
+    <script src="/v1/styling/scripts/background.js"></script>
+    <script src="/v1/styling/scripts/element-list.js"></script>
+
+    <!-- Actions -->
+    <script src="/v1/scripts/buttons/buttons.js"></script>
+    <script src="/v1/scripts/form/forms.js"></script>
+
+    <script src="/v1/scripts/general-lib/init.js"></script><!-- Initialize the General Library-->
+  </body>
+</html>

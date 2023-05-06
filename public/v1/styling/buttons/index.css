@@ -23,7 +23,7 @@
 
 /* IDs */
 
-#pic-button {
+#pic-button, #answer-button {
   font-size: 5.5vw;
   width: 70%;
   padding: 8px;

@@ -9,3 +9,15 @@
 #image-canvas {
   display: none;
 }
+
+#image-placer {
+  display: none;
+}
+
+#answer-button {
+  display: none;
+}
+
+#placeholder {
+  display: none;
+}

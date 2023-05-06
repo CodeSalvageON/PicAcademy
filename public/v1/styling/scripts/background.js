@@ -12,7 +12,7 @@ function loadBack (backSrc) {
 // Initialize
 
 waitForElement("body", 3000).then(function () {
-  loadBack("/styling/images/bg/officepark.jpg");
+  loadBack("/v1/styling/images/bg/officepark.jpg");
 }).catch(() => {
   console.log("Error: did not load!");
 });
