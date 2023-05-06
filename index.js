@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Other modules
 
 const rp = require('request-promise');
+const jsdom = require( 'jsdom' );
+let jsonRes = {};
 
 // Routes
 
@@ -60,6 +62,29 @@ app.post('/getresult', function (req, res) {
   })
   .catch(function (err) {
     throw err;
+  });
+});
+
+app.post('/findrequest', function (req, res) {
+  const userAnswerRequest = req.body.url;
+  
+  jsdom.env( {
+    url: userAnswerRequest,
+    scripts: [ "http://code.jquery.com/jquery.js" ],
+    done: function( error, window ) {
+      let $ = window.$;
+
+      $('meta').each(function () {
+        let name = $(this).attr('property');
+        let value = $(this).attr('content');
+        
+        if (name) {
+          jsonRes[ name.slice( 3 ) ] = value;
+          console.log( name + ": " + value );
+        }
+      });
+      res.send(jsonRes);
+    }
   });
 });
 
