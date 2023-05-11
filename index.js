@@ -14,8 +14,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Other modules
 
 const rp = require('request-promise');
-const jsdom = require( 'jsdom' );
-let jsonRes = {};
+// const linkPreviewGenerator = require("link-preview-generator");
+// const jsdom = require( 'jsdom' );
+// let jsonRes = {};
+const grabity = require("grabity");
 
 // Routes
 
@@ -31,6 +33,7 @@ const requestBeginning = String(process.env.requestBeginning);
 const spaceRemover = String(process.env.spaceRemover);
 const linkProtect = String(process.env.linkProtect);
 const secureConnection = String(process.env.secureConnection);
+const completeConnector = String(process.env.completeConnector);
 
 app.post('/getresult', function (req, res) {
   const questionRes = req.body.quest;
@@ -65,27 +68,38 @@ app.post('/getresult', function (req, res) {
   });
 });
 
-app.post('/findrequest', function (req, res) {
+app.post('/findrequest', async function (req, res) {
   const userAnswerRequest = req.body.url;
+  const cleanRequest = completeConnector + userAnswerRequest;
+  console.log(cleanRequest);
   
-  jsdom.env( {
-    url: userAnswerRequest,
-    scripts: [ "http://code.jquery.com/jquery.js" ],
-    done: function( error, window ) {
-      let $ = window.$;
+  // jsdom.env( {
+  //   url: userAnswerRequest,
+  //   scripts: [ "http://code.jquery.com/jquery.js" ],
+  //   done: function( error, window ) {
+  //     let $ = window.$;
 
-      $('meta').each(function () {
-        let name = $(this).attr('property');
-        let value = $(this).attr('content');
+  //     $('meta').each(function () {
+  //       let name = $(this).attr('property');
+  //       let value = $(this).attr('content');
         
-        if (name) {
-          jsonRes[ name.slice( 3 ) ] = value;
-          console.log( name + ": " + value );
-        }
-      });
-      res.send(jsonRes);
-    }
-  });
+  //       if (name) {
+  //         jsonRes[ name.slice( 3 ) ] = value;
+  //         console.log( name + ": " + value );
+  //       }
+  //     });
+  //     res.send(jsonRes);
+  //   }
+  // });
+
+  // const previewData = linkPreviewGenerator(
+  //   userAnswerRequest
+  // );
+
+  // res.send(previewData);
+
+  let acadResult = await grabity.grabIt(cleanRequest);
+  res.send(acadResult);
 });
 
 http.listen(port, function(){

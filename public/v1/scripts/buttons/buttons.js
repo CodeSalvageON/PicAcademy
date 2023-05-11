@@ -17,6 +17,23 @@ function getAnAnswer () {
   .then(response => response.text())
   .then(data => {
     const answerArray = JSON.parse(data);
+
+    fetch ("/findrequest", {
+      method : "POST",
+      headers : {
+        "Content-Type" : "application/json"
+      },
+      body : JSON.stringify({
+        url : answerArray[0]
+      })
+    })
+    .then(response => response.text())
+    .then(data => {
+      alert(data);
+    })
+    .catch(error => {
+      throw error;
+    })
   })
   .catch(error => {
     throw error;
